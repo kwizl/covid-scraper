@@ -1,4 +1,5 @@
 require_relative '../lib/list.rb'
+include Listing
 
 RSpec.describe Listing do
   describe '#remove_dup' do

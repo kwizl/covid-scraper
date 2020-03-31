@@ -1,12 +1,11 @@
 require 'nokogiri'
 require 'colorize'
 
-require_relative 'scrap.rb'
-require_relative 'list.rb'
+require_relative './scrap.rb'
+require_relative './list.rb'
+include Listing
 
 class List < Scrap
-  include Listing
-
   def initialize
     @scrap = Scrap.new
   end
