@@ -17,10 +17,12 @@ class Scrap
 
   def get_validation(arg)
     state = if arg.body.nil? || arg.body.empty?
+              print 'No Content!'
               false
             elsif !arg.body.nil? || !arg.body.empty?
               true
             else
+              print 'No Content!'
               false
             end
     state
