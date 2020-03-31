@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'nokogiri'
 require 'colorize'
 require 'httparty'
@@ -11,7 +9,7 @@ class Scrap
   def initialize
     @url = 'https://www.worldometers.info/coronavirus/'
     @response = HTTParty.get(url)
-    @parsed = Nokogiri::HTML(response)
+    @parsed = Nokogiri::HTML(@response)
     class_one = 'table#main_table_countries_today'
     class_two = ' > tbody:not(:last-child) > tr'
     @countries_infected = @parsed.css("#{class_one} #{class_two}")
