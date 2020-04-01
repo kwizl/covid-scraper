@@ -16,6 +16,7 @@ This is a ruby web scraper for the currently ongoing globally cases of COVID-19.
 
 - Ruby
 - Nokogiri
+- Httparty
 - Rubocop Linter
 - Stickler CI
 
