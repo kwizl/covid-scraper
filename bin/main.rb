@@ -39,7 +39,6 @@ while state
   elsif choice == 3
     print 'Country Name: '
     choice_name = gets.chomp
-    choice_name = choice_name.capitalize
     puts search.country_details(choice_name)
   elsif choice == 4
     puts search.total_cases_max

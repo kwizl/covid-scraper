@@ -14,14 +14,14 @@ class List < Scrap
     super
   end
 
-  def c_data
+  def countries_data
     count = 0
     countries_array = []
     if get_validation(@scrap.response)
       @scrap.countries_infected.each do |countries|
         countries.each do
           count += 1
-          @country = {
+          country = {
             name: countries.css(':first-child').text,
             new_deaths: countries.css(':nth-child(5)').text,
             total_deaths: countries.css(':nth-child(4)').text,
@@ -29,7 +29,7 @@ class List < Scrap
             new_cases: countries.css(':nth-child(3)').text,
             total_cases: countries.css(':nth-child(2)').text
           }
-          countries_array << @country
+          countries_array << country
         end
       end
     else
@@ -48,26 +48,15 @@ class List < Scrap
   def print_all
     count = 0
     if get_validation(@scrap.response)
-      @scrap.countries_infected.each do |countries|
-        countries.each do
-          count += 1
-          @country = {
-            name: countries.css(':first-child').text,
-            new_deaths: countries.css(':nth-child(5)').text,
-            total_deaths: countries.css(':nth-child(4)').text,
-            total_recovered: countries.css(':nth-child(6)').text,
-            new_cases: countries.css(':nth-child(3)').text,
-            total_cases: countries.css(':nth-child(2)').text
-          }
-
-          print "#{count}. Name: #{@country[:name].remove_dup} ".blue
-          print "| New Deaths: #{@country[:new_deaths]} ".red
-          print "| Total Deaths: #{@country[:total_deaths]} ".red
-          print "| Total Recovered: #{@country[:total_recovered]} ".green
-          print "| New Cases: #{@country[:new_cases]} ".yellow
-          print "| Total Cases: #{@country[:total_cases]}\n".yellow
-          print_dash
-        end
+      countries_data.each do |country|
+        count += 1
+        print "#{count}. Name: #{country[:name].remove_dup} ".blue
+        print "| New Deaths: #{country[:new_deaths]} ".red
+        print "| Total Deaths: #{country[:total_deaths]} ".red
+        print "| Total Recovered: #{country[:total_recovered]} ".green
+        print "| New Cases: #{country[:new_cases]} ".yellow
+        print "| Total Cases: #{country[:total_cases]}\n".yellow
+        print_dash
       end
     else
       print 'No Content!'
@@ -77,17 +66,13 @@ class List < Scrap
   def print_names
     count = 0
     if get_validation(@scrap.response)
-      @scrap.countries_infected.each do |countries|
-        countries.each do
-          count += 1
-          @country = {
-            name: countries.css(':first-child').text
-          }
-          print "#{count}. #{@country[:name].remove_dup}, ".blue
-        end
+      countries_data.each do |country|
+        count += 1
+        print "#{count}.#{country[:name].remove_dup}, ".blue
       end
+      puts
     else
-      print 'No Content'
+      print 'No Content!'
     end
   end
 
@@ -98,7 +83,7 @@ class List < Scrap
     countries_infected = @scrap.parsed.css("#{class_one} #{class_two}")
     countries_infected.each do |countries|
       countries.each do
-        @country = {
+        country = {
           name: countries.css(':first-child').text,
           new_deaths: countries.css(':nth-child(5)').text,
           total_deaths: countries.css(':nth-child(4)').text,
@@ -106,7 +91,7 @@ class List < Scrap
           new_cases: countries.css(':nth-child(3)').text,
           total_cases: countries.css(':nth-child(2)').text
         }
-        countries_d << @country
+        countries_d << country
       end
     end
     print "#{countries_d[-1][:name].remove_dup} ".blue
