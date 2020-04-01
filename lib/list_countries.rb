@@ -79,7 +79,7 @@ class List < Scrap
   def print_total
     countries_d = []
     class_one = 'table#main_table_countries_today'
-    class_two = ' > tbody:last-child > tr'
+    class_two = ' > tbody > tr'
     countries_infected = @scrap.parsed.css("#{class_one} #{class_two}")
     countries_infected.each do |countries|
       countries.each do
