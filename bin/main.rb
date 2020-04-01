@@ -34,25 +34,19 @@ while state
   if choice == 1
     puts 'ALL COUNTRIES DATA'
     list.print_all
-    state = true
   elsif choice == 2
     list.print_names
-    state = true
   elsif choice == 3
     print 'Country Name: '
     choice_name = gets.chomp
     choice_name = choice_name.capitalize
     puts search.country_details(choice_name)
-    state = true
   elsif choice == 4
     puts search.total_cases_max
-    state = true
   elsif choice == 5
     puts search.total_death_max
-    state = true
   elsif choice == 6
     puts list.print_total
-    state = true
   elsif choice.zero?
     state = false
     break
