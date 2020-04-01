@@ -3,9 +3,13 @@ require 'colorize'
 
 # Class that searches the details of countries
 class Search < List
+  private
+
   def countries_data
     super
   end
+
+  public
 
   def country_details(c_name)
     countries_data

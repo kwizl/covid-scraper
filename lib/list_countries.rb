@@ -38,12 +38,16 @@ class List < Scrap
     countries_array
   end
 
+  private
+
   def print_dash
     125.times do
       print '-'
     end
     puts
   end
+
+  public
 
   def print_all
     count = 0
