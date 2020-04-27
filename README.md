@@ -8,6 +8,7 @@ This is a ruby web scraper for the currently ongoing globally cases of COVID-19.
 - Enter into the project folder `cd covid-scraper`
 
 ## How To Run The Scraper
+- type **bundle install** on the terminal
 - To start the scraper, run this command `./bin/main.rb`
 - Once you you run the scraper, you will see and introductory message and some given instructions. To list all the
   countries and their details enter **1**. To list only the country names with cases enter **2**. To search the specific country with its details enter **3** then type its name in capitalized format. To list the country with most cases enter **4**. To list the country with most deaths enter **5**. And finally to view ths total statistics for COVD-19 globally enter **6**.
