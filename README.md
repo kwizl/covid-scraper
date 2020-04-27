@@ -1,4 +1,4 @@
-# COVID-19 WEB SCARPER
+# COVID-19 WEB SCRAPER
 This is a ruby web scraper for the currently ongoing globally cases of COVID-19. It is a viral respiratory disease caused by the severe acute respiratory syndrome coronavirus 2. It is the disease implicated in the 2019–2020 coronavirus epidemic. The primary mode of infection in humans is human-to-human transmission, which generally occurs via respiratory droplets from infected individuals which they sneeze, cough or expire. It has an incubation period of between 2 to 17 days. Transmission can be limited by washing hands, good hygiene, and wearing surgical masks. The disease may initially present itself as asymptomatic or with few symptoms, or may develop into fever, coughing, shortness of breath, pain in the muscles and tiredness, with further development into pneumonia, acute respiratory distress syndrome, and death. There are no vaccines nor effective treatments, with efforts typically confined to management of symptoms and supportive measures.
 
 ## Instructions Before Running This Scraper
